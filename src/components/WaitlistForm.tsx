@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, CheckCircle } from "lucide-react";
+import { Mail, CheckCircle, Heart } from "lucide-react";
 
 const WaitlistForm = () => {
   const [email, setEmail] = useState("");
@@ -34,8 +34,8 @@ const WaitlistForm = () => {
       setIsLoading(false);
       
       toast({
-        title: "Welcome to the waitlist! 🎉",
-        description: "We'll notify you as soon as we launch. Thanks for joining our community!",
+        title: "Welcome to our community! 🎉",
+        description: "We'll let you know as soon as we launch. Thanks for helping us build this together!",
       });
     }, 1000);
   };
@@ -49,14 +49,19 @@ const WaitlistForm = () => {
               <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <CheckCircle className="h-10 w-10 text-green-600" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">You're On the List! 🎉</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">You're In! Welcome to Our Community! 🎉</h2>
               <p className="text-xl text-gray-600 mb-6">
-                Thank you for joining our community, {name}! We'll send you an email at{" "}
+                Thank you for joining us, {name}! We'll send you an email at{" "}
                 <span className="font-semibold text-blue-600">{email}</span> as soon as we launch.
               </p>
-              <p className="text-gray-500">
-                Help us spread the word to other Homat Shmuel residents!
+              <p className="text-gray-500 mb-4">
+                Help us spread the word to other Homat Shmuel neighbors!
               </p>
+              <div className="bg-amber-50 p-4 rounded-lg border border-amber-200">
+                <p className="text-amber-800 font-medium">
+                  💡 Your feedback will help shape how this platform grows
+                </p>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -71,12 +76,17 @@ const WaitlistForm = () => {
           <CardContent className="p-12">
             <div className="text-center mb-8">
               <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Mail className="h-8 w-8 text-amber-600" />
+                <Heart className="h-8 w-8 text-amber-600" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Join the Waitlist</h2>
-              <p className="text-xl text-gray-600">
-                Get notified when we launch and be among the first to strengthen our community connections!
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Join Our Community (It's Free!)</h2>
+              <p className="text-xl text-gray-600 mb-4">
+                Be the first to know when we launch and help us build something special together!
               </p>
+              <div className="bg-green-50 p-4 rounded-lg border border-green-200 mb-6">
+                <p className="text-green-700 font-medium">
+                  🌟 Your input matters as we grow this platform with community feedback
+                </p>
+              </div>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -115,12 +125,12 @@ const WaitlistForm = () => {
                 disabled={isLoading}
                 className="w-full bg-gradient-to-r from-amber-600 to-blue-600 hover:from-amber-700 hover:to-blue-700 text-white py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:transform-none"
               >
-                {isLoading ? "Joining..." : "Join the Waitlist"}
+                {isLoading ? "Joining..." : "Join the Community - Free Forever!"}
               </Button>
             </form>
 
             <p className="text-sm text-gray-500 text-center mt-6">
-              We respect your privacy. No spam, just important updates about our community platform.
+              We respect your privacy. No spam, just community updates. Always free!
             </p>
           </CardContent>
         </Card>

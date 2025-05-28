@@ -25,7 +25,13 @@ const FeatureCard = ({ icon: Icon, title, description, status, statusColor }: Fe
         </div>
         
         <h3 className="text-xl font-semibold text-gray-900 mb-3">{title}</h3>
-        <p className="text-gray-600 leading-relaxed">{description}</p>
+        <p className="text-gray-600 leading-relaxed mb-4">{description}</p>
+        
+        <div className="bg-green-50 p-3 rounded-lg border border-green-200">
+          <p className="text-green-700 text-sm font-medium text-center">
+            ✨ Always free for our community
+          </p>
+        </div>
       </CardContent>
     </Card>
   );
