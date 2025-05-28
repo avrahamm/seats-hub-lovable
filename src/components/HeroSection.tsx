@@ -6,8 +6,10 @@ import { ArrowRight, MapPin, Users, Heart } from "lucide-react";
 // Magen David (6-pointed star) component - Israeli flag style
 const MagenDavid = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 2 L17 12 L12 22 L7 12 Z" />
-    <path d="M12 2 L17 12 L12 22 L7 12 Z" transform="rotate(180 12 12)" />
+    {/* Upward pointing triangle */}
+    <path d="M12 3 L18 15 L6 15 Z" />
+    {/* Downward pointing triangle */}
+    <path d="M12 21 L6 9 L18 9 Z" />
   </svg>
 );
 
