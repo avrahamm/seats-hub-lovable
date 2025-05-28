@@ -20,27 +20,27 @@ const Index = () => {
       title: "Seat Sharing with Tradition",
       description: "Respectfully share your synagogue seat when you're away. Help fellow community members and guests find a place to daven, especially during Shabbat and holidays.",
       status: "Available Now",
-      statusColor: "bg-green-100 text-green-800"
+      statusColor: "bg-blue-100 text-blue-800"
     },
     {
       icon: Home,
       title: "Hospitality for Special Events",
       description: "Connect families for meals and overnight stays during simchas and celebrations. Offer a bed, share a meal, or find what you need for your guests.",
       status: "Coming Soon",
-      statusColor: "bg-blue-100 text-blue-800"
+      statusColor: "bg-gray-100 text-gray-800"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-gray-50">
       {/* Header */}
       <header className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Star className="h-8 w-8 text-amber-600 fill-current" />
+            <Star className="h-8 w-8 text-blue-600 fill-current" />
             <span className="text-2xl font-bold text-gray-900">Homat Shmuel Hub</span>
           </div>
-          <Badge variant="outline" className="text-green-700 border-green-200 bg-green-50">
+          <Badge variant="outline" className="text-blue-700 border-blue-200 bg-blue-50">
             Always Free
           </Badge>
         </div>
@@ -75,7 +75,7 @@ const Index = () => {
         </section>
 
         {/* How It Works */}
-        <section className="py-20 bg-gradient-to-r from-amber-50 to-blue-50">
+        <section className="py-20 bg-gradient-to-r from-blue-50 to-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Simple Steps to Help Your Neighbors</h2>
@@ -85,8 +85,8 @@ const Index = () => {
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <Card className="text-center border-0 shadow-lg bg-white/80 backdrop-blur">
                 <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Users className="h-8 w-8 text-amber-600" />
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Users className="h-8 w-8 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4">Join Our Community</h3>
                   <p className="text-gray-600">Connect with your Homat Shmuel neighbors - locals, newcomers, and guests are all welcome!</p>
@@ -105,8 +105,8 @@ const Index = () => {
 
               <Card className="text-center border-0 shadow-lg bg-white/80 backdrop-blur">
                 <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Heart className="h-8 w-8 text-green-600" />
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Heart className="h-8 w-8 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4">Build Together</h3>
                   <p className="text-gray-600">Help us grow this platform with your feedback and make Shabbat feel like home for everyone.</p>
@@ -124,7 +124,7 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="text-center">
               <div className="flex items-center justify-center space-x-2 mb-4">
-                <Star className="h-6 w-6 text-amber-400 fill-current" />
+                <Star className="h-6 w-6 text-blue-400 fill-current" />
                 <span className="text-xl font-bold">Homat Shmuel Hub</span>
               </div>
               <p className="text-gray-400 mb-6">
