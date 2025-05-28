@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, MapPin, Users, Heart } from "lucide-react";
 
-// Magen David (6-pointed star) component
+// Magen David (6-pointed star) component - Israeli flag style
 const MagenDavid = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 2L15.09 8.26L22 9L17 14.74L18.18 21.02L12 17.77L5.82 21.02L7 14.74L2 9L8.91 8.26L12 2Z" transform="translate(0, 1)" />
-    <path d="M12 2L15.09 8.26L22 9L17 14.74L18.18 21.02L12 17.77L5.82 21.02L7 14.74L2 9L8.91 8.26L12 2Z" transform="translate(0, -1) rotate(180 12 12)" />
+    <path d="M12 2 L17 12 L12 22 L7 12 Z" />
+    <path d="M12 2 L17 12 L12 22 L7 12 Z" transform="rotate(180 12 12)" />
   </svg>
 );
 
