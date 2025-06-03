@@ -1,10 +1,10 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, CheckCircle, Heart } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const WaitlistForm = () => {
   const [email, setEmail] = useState("");
@@ -27,17 +27,43 @@ const WaitlistForm = () => {
 
     setIsLoading(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      console.log("Waitlist signup:", { name, email });
-      setIsSubmitted(true);
-      setIsLoading(false);
-      
+    try {
+      const { error } = await supabase
+        .from('waitlist')
+        .insert([{ email }]);
+
+      if (error) {
+        console.error("Waitlist signup error:", error);
+        
+        if (error.code === '23505') {
+          toast({
+            title: "Already on the waitlist!",
+            description: "This email is already registered. We'll be in touch soon!",
+          });
+        } else {
+          toast({
+            title: "Something went wrong",
+            description: "Please try again later or contact us directly.",
+            variant: "destructive",
+          });
+        }
+      } else {
+        setIsSubmitted(true);
+        toast({
+          title: "Welcome to our community! 🎉",
+          description: "We'll let you know as soon as we launch. Thanks for helping us build this together!",
+        });
+      }
+    } catch (error) {
+      console.error("Unexpected error:", error);
       toast({
-        title: "Welcome to our community! 🎉",
-        description: "We'll let you know as soon as we launch. Thanks for helping us build this together!",
+        title: "Something went wrong",
+        description: "Please try again later or contact us directly.",
+        variant: "destructive",
       });
-    }, 1000);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isSubmitted) {
