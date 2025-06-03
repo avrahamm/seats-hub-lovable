@@ -41,6 +41,25 @@ const Index = () => {
     }
   ];
 
+  const scrollToWaitlist = () => {
+    document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToFeatures = () => {
+    document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToCommunity = () => {
+    document.getElementById('community')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const showComingSoonToast = (feature: string) => {
+    toast({
+      title: "Coming Soon!",
+      description: `${feature} will be available in a future update. Thanks for your interest!`,
+    });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-gray-50">
       {/* Header */}
@@ -61,10 +80,12 @@ const Index = () => {
         <HeroSection />
 
         {/* Community Stats */}
-        <CommunityStats />
+        <div id="community">
+          <CommunityStats />
+        </div>
 
         {/* Features Section */}
-        <section className="py-20 bg-white">
+        <section id="features" className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -151,9 +172,30 @@ const Index = () => {
               <div>
                 <h4 className="text-lg font-semibold mb-4 text-blue-400">Quick Links</h4>
                 <ul className="space-y-2">
-                  <li><a href="#waitlist" className="text-gray-400 hover:text-white transition-colors">Join Waitlist</a></li>
-                  <li><a href="#features" className="text-gray-400 hover:text-white transition-colors">How It Works</a></li>
-                  <li><a href="#community" className="text-gray-400 hover:text-white transition-colors">Community Stats</a></li>
+                  <li>
+                    <button 
+                      onClick={scrollToWaitlist}
+                      className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+                    >
+                      Join Waitlist
+                    </button>
+                  </li>
+                  <li>
+                    <button 
+                      onClick={scrollToFeatures}
+                      className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+                    >
+                      How It Works
+                    </button>
+                  </li>
+                  <li>
+                    <button 
+                      onClick={scrollToCommunity}
+                      className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+                    >
+                      Community Stats
+                    </button>
+                  </li>
                 </ul>
               </div>
 
@@ -162,22 +204,31 @@ const Index = () => {
                 <h4 className="text-lg font-semibold mb-4 text-blue-400">About</h4>
                 <ul className="space-y-2">
                   <li>
-                    <a href="#" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                    <button 
+                      onClick={() => showComingSoonToast("About Us page")}
+                      className="text-gray-400 hover:text-white transition-colors flex items-center cursor-pointer"
+                    >
                       <Info className="h-4 w-4 mr-2" />
                       About Us
-                    </a>
+                    </button>
                   </li>
                   <li>
-                    <a href="#" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                    <button 
+                      onClick={() => showComingSoonToast("Privacy Policy")}
+                      className="text-gray-400 hover:text-white transition-colors flex items-center cursor-pointer"
+                    >
                       <Shield className="h-4 w-4 mr-2" />
                       Privacy Policy
-                    </a>
+                    </button>
                   </li>
                   <li>
-                    <a href="#" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                    <button 
+                      onClick={() => showComingSoonToast("Community Guidelines")}
+                      className="text-gray-400 hover:text-white transition-colors flex items-center cursor-pointer"
+                    >
                       <MessageCircle className="h-4 w-4 mr-2" />
                       Community Guidelines
-                    </a>
+                    </button>
                   </li>
                 </ul>
               </div>
