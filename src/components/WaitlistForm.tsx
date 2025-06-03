@@ -66,6 +66,12 @@ const WaitlistForm = () => {
     }
   };
 
+  const handleSubmitAnother = () => {
+    setIsSubmitted(false);
+    setEmail("");
+    setName("");
+  };
+
   if (isSubmitted) {
     return (
       <section id="waitlist" className="py-20 bg-gradient-to-r from-blue-50 to-gray-50">
@@ -83,11 +89,17 @@ const WaitlistForm = () => {
               <p className="text-gray-500 mb-4">
                 Help us spread the word to other Homat Shmuel neighbors!
               </p>
-              <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+              <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 mb-6">
                 <p className="text-blue-800 font-medium">
                   💡 Your feedback will help shape how this platform grows
                 </p>
               </div>
+              <Button
+                onClick={handleSubmitAnother}
+                className="bg-gradient-to-r from-green-600 to-green-800 hover:from-green-700 hover:to-green-900 text-white py-3 px-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              >
+                Submit Another Email
+              </Button>
             </CardContent>
           </Card>
         </div>
